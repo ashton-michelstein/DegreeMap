@@ -12,6 +12,13 @@ To close the database, either delete the docker container or run this command in
 ``` bash
 docker-compose down 
 ```
+To see the database through the terminal, run this command in the root directory
+``` bash
+docker exec -it server-mysql-1 mysql -u user -p
+USE mydatabase;
+SHOW TABLES;
+DESCRIBE greeting;
+```
 
 ### Running Back-end:
 To run the backend server for the application you MUST have the database running, then you may either run the DegreeMapApplication.java file using some IDE or you can run this command in the root directory:
