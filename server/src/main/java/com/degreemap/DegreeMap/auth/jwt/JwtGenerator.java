@@ -22,7 +22,8 @@ public class JwtGenerator {
     public String generateAccessToken(UserDetails user) {
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuedAt(Instant.now())
-                .expiresAt(Instant.now().plus(15, ChronoUnit.MINUTES))
+                // TODO: Change this to a more reasonable value
+                .expiresAt(Instant.now().plus(2, ChronoUnit.HOURS))
                 .subject(user.getUsername())
                 .claim("scope", "USER")
                 .build();
